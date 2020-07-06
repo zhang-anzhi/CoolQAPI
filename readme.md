@@ -10,10 +10,6 @@
 
 已存储在`requirements.txt`中, 可以使用`pip install -r requirements.txt`安装
 
-- requests
-- flask
-- PyYAML
-
 ## 使用
 
 前往[release](https://github.com/zhang-anzhi/CoolQAPI/releases)页面下载最新的release并解压
