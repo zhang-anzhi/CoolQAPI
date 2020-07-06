@@ -1,0 +1,14 @@
+# pycharm
+.idea/
+
+# release
+make_release.bat
+release/
+
+# useless file
+CoolQAPI/config.yml
+CoolQAPI/__pycache__
+CoolQAPI/utils/__pycache__
+
+# too big file
+CoolQ.zip
