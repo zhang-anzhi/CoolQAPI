@@ -85,7 +85,7 @@ class Info:
             # json.dumps(self.__data, indent=4, ensure_ascii=False))
 
         # shutdown:
-        if 'shutdown' in self.__data and self.__data['shutdown'] is True:
+        if 'shutdown' in self.__data.keys() and self.__data['shutdown'] is True:
             return self.__shutdown()
 
         # global
@@ -94,11 +94,9 @@ class Info:
         self.time = self.__data['time']
         self.post_type = self.__data['post_type']
 
-        # message
+        # 两种类型的上报
         if self.post_type == 'message':
             self.message_parse()
-
-        # notice
         elif self.post_type == 'notice':
             self.notice_parse()
 

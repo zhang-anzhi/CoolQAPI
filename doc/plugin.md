@@ -17,6 +17,8 @@ CoolQQAPI会为每个事件新建一个线程来运行, 不要让你的插件变
 | on_qq_command(server, info, bot)   | 接收到指令      | 处理qq指令          |
 | on_qq_notice(server, info, bot)    | 接收到通知      | 处理通知消息        |
 
+> **提示：这个插件的方法是这个插件来调用的，与MCDR并不互通，所以MCDR的事件和这些事件无法交互变量**
+
 各参数的消息如下:
 
 ### server
@@ -64,6 +66,7 @@ MCDReforged的`server`对象, 推荐阅读MCDR的[开发文档](https://github.c
 
 | 方法                                   | 功能                                           |
 | -------------------------------------- | --------------------------------------------- |
+| reply(info, message)                   | 回复QQ信息, 传入info对象即可, 会自行判断回复位置  |
 | send_msg(message, xx_id=id)            | 发送一条消息, 目标类型会根据xx_id的xx判断        |
 | send_private_msg(user_id, message)     | 发送一条私人消息                                |
 | send_group_msg(group_id, message)      | 发送一条群组消息                                |

@@ -7,6 +7,15 @@ class Bot:
     def __init__(self, config):
         self.config = config
 
+    def reply(self, info, message: str):
+        """auto reply"""
+        if info.source_type == 'private':
+            self.send_private_msg(info.source_id, message)
+        elif info.source_type == 'group':
+            self.send_group_msg(info.source_id, message)
+        elif info.source_type == 'discuss':
+            self.send_discuss_msg(info.source_id, message)
+
     def send_msg(self, message: str, **kwargs):
         """send msg"""
         data = {'message': message}
@@ -42,7 +51,7 @@ class Bot:
     def send_discuss_msg(self, discuss_id: int, message: str):
         """send group msg"""
         data = {
-            'discuss_id': group_id,
+            'discuss_id': discuss_id,
             'message': message
         }
         return requests.post(
