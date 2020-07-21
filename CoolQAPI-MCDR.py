@@ -57,6 +57,8 @@ def command(server, info, command):
         elif command[2] == 'plugin':
             reload_plugins()
             server.reply(info, '§a已成功重载插件')
+    else:
+        server.reply(info, '§c未知指令')
 
 
 def reload_plugins():
