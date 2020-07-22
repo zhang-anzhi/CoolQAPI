@@ -3,6 +3,7 @@
 import time
 
 from plugins.CoolQAPI.utils.functions import load_source
+from plugins.CoolQAPI.utils.update import check
 
 cool_q_api = load_source('plugins/CoolQAPI/CoolQAPI.py')
 
@@ -13,6 +14,7 @@ help_msg = '''
 
 def on_load(server, old):
     time.sleep(1)
+    check(server)
     global cool_q_api
     try:
         if old is not None and old.cool_q_api is not None:

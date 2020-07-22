@@ -9,6 +9,7 @@ release/
 CoolQAPI/config.yml
 CoolQAPI/__pycache__
 CoolQAPI/utils/__pycache__
+CoolQAPI/CoolQAPI_update
 
 # too big file
 CoolQ.zip
