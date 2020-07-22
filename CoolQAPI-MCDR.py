@@ -14,14 +14,15 @@ help_msg = '''
 
 def on_load(server, old):
     time.sleep(1)
-    check(server)
     global cool_q_api
     try:
         if old is not None and old.cool_q_api is not None:
             cool_q_api = old.cool_q_api
         else:
+            check(server)
             start(server)
     except:
+        check(server)
         start(server)
 
 
