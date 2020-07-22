@@ -3,7 +3,7 @@
 import os
 from threading import Thread
 
-from .functions import *
+from .functions import load_source
 
 
 class Event:
@@ -28,17 +28,22 @@ class Event:
             if hasattr(plugin, func_name):
                 target = plugin.__dict__[func_name]
                 if callable(target):
-                    thread = PluginThread(target, args, plugin, func_name)
+                    thread = PluginThread(
+                        self.__server, target, args, plugin, func_name)
                     thread.start()
 
 
 class PluginThread(Thread):
-    def __init__(self, target, args, plugin, func_name):
+    def __init__(self, server, target, args, plugin, func_name):
+        self.server = server
+        self.plugin_name = plugin.__name__
+        self.func_name = func_name
         super().__init__(target=target, args=args,
-                         name=f'{func_name}@{plugin.__name__[8:]}')
+                         name=f'{func_name}@{self.plugin_name}')
 
     def run(self):
         try:
             super().run()
         except:
-            pass
+            self.server.logger.exception(
+                f'Error calling {self.func_name} in plugin {self.plugin_name}')

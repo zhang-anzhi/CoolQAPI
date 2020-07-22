@@ -26,7 +26,6 @@ def on_load(server, old):
 
 
 def on_mcdr_stop(server):
-    server.logger.info('Waiting for CoolQAPI server stop')
     stop()
 
 
