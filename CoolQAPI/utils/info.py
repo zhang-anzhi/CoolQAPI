@@ -146,7 +146,7 @@ class Info:
         content = self.__data['raw_message']
         content = re.sub(r'\[CQ:image,file=.*?\]', '[图片]', content)
         content = re.sub(r'\[CQ:share,file=.*?\]', '[链接]', content)
-        content = re.sub(r'\[CQ:face,file=.*?\]', '[表情]', content)
+        content = re.sub(r'\[CQ:face,id=.*?\]', '[表情]', content)
         content = re.sub(r'\[CQ:record,file=.*?\]', '[语音]', content)
         content = content.replace('CQ:at,qq=', '@')
         self.content = content

@@ -17,13 +17,19 @@ def check_update(server):
     try:
         server.logger.info('检查更新中')
         r = requests.get(url).json()
-        compare = version_compare(r['tag_name'], VERSION)
+        try:
+            compare = version_compare(r['tag_name'], VERSION)
+        except ValueError:
+            server.logger.error('您的版本号错误, 自动为您下载最新版中')
+            compare = 1
         if compare == 0:
             server.logger.info('CoolQAPI 已为最新版')
         elif compare == 1:
             server.logger.info('发现新版本: ' + r['tag_name'])
             download_link = r['assets'][0]['browser_download_url']
             download(server, download_link, r['tag_name'])
+        elif compare == -1:
+            server.logger.info('检测到 CoolQAPI 为开发版')
     except requests.exceptions.ProxyError:
         server.logger.error('CoolQAPI 更新失败')
 
