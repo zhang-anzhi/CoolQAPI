@@ -15,7 +15,7 @@ def check(server):
 
 def check_update(server):
     try:
-        server.logger.info('检查更新中')
+        server.logger.info('检测更新中')
         r = requests.get(url).json()
         try:
             compare = version_compare(r['tag_name'], VERSION)

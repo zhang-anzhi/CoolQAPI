@@ -1,8 +1,4 @@
-# pycharm
-.idea/
-
 # release
-make_release.bat
 release/
 
 # useless file

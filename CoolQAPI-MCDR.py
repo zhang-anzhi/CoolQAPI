@@ -9,7 +9,9 @@ cool_q_api = load_source('plugins/CoolQAPI/CoolQAPI.py')
 
 help_msg = '''
 §6!!CQ reload all §7重载所有
-§6!!CQ reload plugin §7重载插件'''
+§6!!CQ reload plugin §7重载插件
+§6!!CQ update §7检查并自动更新
+'''
 
 
 def on_load(server, old):
@@ -59,6 +61,8 @@ def command(server, info, command):
         elif command[2] == 'plugin':
             reload_plugins()
             server.reply(info, '§a已成功重载插件')
+    elif len(command) == 2 and command[1] == 'update':
+        check(server)
     else:
         server.reply(info, '§c未知指令')
 
