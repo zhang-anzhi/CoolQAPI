@@ -90,10 +90,14 @@ MCDReforged的`server`对象, 推荐阅读MCDR的[开发文档](https://github.c
 
 ## API
 
-1.**reload_plugins()**
+### reload_plugins()
 
-用于重新载入插件
+用于重载插件
 
-2.**get_bot()**
+### get_bot()
 
 用于获取`bot`对象
+
+### get_config()
+
+用于获取插件配置, 使用 `get_config()[key]` 来读取配置项

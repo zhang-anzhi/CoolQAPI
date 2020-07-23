@@ -73,3 +73,9 @@ def get_bot():
     """return bot object"""
     global cool_q_api
     return cool_q_api.get_bot()
+
+
+def get_config():
+    """get the api config"""
+    global cool_q_api
+    return cool_q_api.get_config()
