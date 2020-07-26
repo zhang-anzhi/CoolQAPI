@@ -139,6 +139,22 @@ class Info:
             self.file_name = self.__data['file']['name']
             self.file_size = self.__data['file']['size']
 
+        # group_increase
+        elif self.notice_type == 'group_increase':
+            self.source_type = 'group'
+            self.source_id = self.__data['group_id']
+            self.user_id = self.__data['user_id']
+            self.operator_id = self.__data['operator_id']
+            self.notice_sub_type = self.__data['sub_type']
+
+        # group_decrease
+        elif self.notice_type == 'group_decrease':
+            self.source_type = 'group'
+            self.source_id = self.__data['group_id']
+            self.user_id = self.__data['user_id']
+            self.operator_id = self.__data['operator_id']
+            self.notice_sub_type = self.__data['sub_type']
+
         # call on_qq_notice
         self.__event.call('on_qq_notice', (self.__server, self, self.__bot))
 
