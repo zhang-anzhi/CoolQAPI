@@ -62,7 +62,7 @@ def command(server, info, command):
             reload_plugins()
             server.reply(info, '§a已成功重载插件')
     elif len(command) == 2 and command[1] == 'update':
-        check(server)
+        check(server, info)
     else:
         server.reply(info, '§c未知指令')
 
