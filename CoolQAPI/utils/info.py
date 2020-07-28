@@ -80,9 +80,8 @@ class Info:
         # dict
         self.__data = data
 
-        # TODO: remove debug
-        # self.__server.logger.warning(
-            # json.dumps(self.__data, indent=4, ensure_ascii=False))
+        self.__server.logger.debug(
+            json.dumps(self.__data, indent=4, ensure_ascii=False))
 
         # shutdown:
         if 'shutdown' in self.__data.keys() and self.__data['shutdown'] is True:

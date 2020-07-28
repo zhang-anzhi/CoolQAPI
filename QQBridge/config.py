@@ -23,9 +23,8 @@ class Config:
     def check_config(self):
         self.touch('post_host', '127.0.0.1')
         self.touch('post_port', 5701)
-        self.touch('api_host', '127.0.0.1')
-        self.touch('api_port', 5700)
-        self.touch('command_prefix', '/')
+        self.touch('post_url', '/post')
+        self.touch('server_list', [])
 
     def __getitem__(self, item):
         return self.data[item]

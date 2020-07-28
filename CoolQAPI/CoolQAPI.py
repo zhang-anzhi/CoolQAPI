@@ -20,9 +20,8 @@ def start(server):
 
 def stop():
     global is_work, config
-    requests.post('http://{}:{}{}'.format(
-        config['post_host'], config['post_port'], config['post_url']),
-        json={'shutdown': True})
+    requests.post('http://{}:{}/post'.format(
+        config['post_host'], config['post_port']), json={'shutdown': True})
     is_work = False
 
 

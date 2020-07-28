@@ -1,11 +1,17 @@
 # release
 release/
 
-# useless file
+# CoolQAPI
 CoolQAPI/config.yml
 CoolQAPI/__pycache__
 CoolQAPI/utils/__pycache__
 CoolQAPI/CoolQAPI_update
+
+# QQBridge
+QQBridge/__pycache__
+QQBridge/.idea
+QQBridge/config.yml
+QQBridge/logs
 
 # too big file
 CoolQ.zip

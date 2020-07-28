@@ -22,7 +22,7 @@ class PostServer(Thread):
         self.config = config
         self.info = Info(self.server, self.config)
 
-        @self.bot_server.route(self.config['post_url'], methods=['POST'])
+        @self.bot_server.route('/post', methods=['POST'])
         def server():
             self.info.parse(json.loads(request.get_data().decode('utf-8')))
             return ''

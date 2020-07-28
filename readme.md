@@ -8,31 +8,37 @@
 
 1.**依赖的Python模块**
 
-已存储在`requirements.txt`中, 可以使用`pip install -r requirements.txt`安装
+已存储在 `requirements.txt` 中, 可以使用 `pip install -r requirements.txt` 安装
 
 ## 使用
 
-前往[release](https://github.com/zhang-anzhi/CoolQAPI/releases)页面下载最新的release并解压
+前往 [release](https://github.com/zhang-anzhi/CoolQAPI/releases) 页面下载最新的release并解压
 
 ### 配置酷Q
 
-在解压到的文件夹中找到`CoolQQ.zip`, 解压
+在解压到的文件夹中找到 `CoolQQ.zip`, 解压
 
-解压后运行`CQA.exe`, 登陆账号, 启用插件，看到酷Q http插件的日志页面即为成功
+解压后运行 `CQA.exe`, 登陆账号, 启用插件，看到酷Q http插件的日志页面即为成功
 
-然后打开`/data/app/io.github.richardchien.coolqhttpapi/config/`将我写好的`example.json`替换为同一目录下的`QQ号.json`
+然后打开 `/data/app/io.github.richardchien.coolqhttpapi/config/` 将我写好的 `example.json` 替换为同一目录下的 `QQ号.json`
 
 重启酷Q http插件
 
 ### 配置MCDR
 
-将`CoolQAPI-MCDR.py`和`CoolQAPI`文件夹放入MCDR的plugins文件夹
+将 `CoolQAPI-MCDR.py` 和 `CoolQAPI` 文件夹放入MCDR的plugins文件夹
 
 重载MCDR
 
+### 关于多服使用
+
+`QQBridge` 可以将一个机器人接受的信息分发给多个服务器进行处理
+
+这里是进行多个服务器配置的方法 [QQBridge使用文档](doc/QQBridge.md)
+
 ## 配置文件
 
-配置文件位于`CoolQAPI\config.yml`
+配置文件位于 `CoolQAPI\config.yml`
 
 1.**post_host**
 
@@ -46,25 +52,19 @@
 
 接收酷Q转发消息的端口
 
-3.**post_url**
-
-默认值: `/post`
-
-接收酷Q转发消息的地址
-
-4.**api_host**
+3.**api_host**
 
 默认值: `127.0.0.1`
 
 酷Qapi的ip地址
 
-5.**post_port**
+4.**post_port**
 
 默认值: `5700`
 
 酷Qapi的端口
 
-6.**command_prefix**
+5.**command_prefix**
 
 默认值: `/`
 
@@ -80,4 +80,4 @@
 
 ## 开发
 
-请阅读[开发文档](doc/plugin.md)了解开发相关内容
+请阅读 [开发文档](doc/plugin.md) 了解开发相关内容
