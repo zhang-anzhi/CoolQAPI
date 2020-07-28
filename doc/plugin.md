@@ -1,6 +1,6 @@
 # 开发文档
 
-可以阅读[example_plugin.py](https://github.com/zhang-anzhi/CoolQAPI/blob/master/example_plugin.py)来理解
+可以阅读 [example_plugin.py](https://github.com/zhang-anzhi/CoolQAPI/blob/master/example_plugin.py) 来理解
 
 ## 事件
 
@@ -23,13 +23,13 @@ CoolQQAPI会为每个事件新建一个线程来运行, 不要让你的插件变
 
 ### server
 
-MCDReforged的`server`对象, 推荐阅读MCDR的[开发文档](https://github.com/Fallen-Breath/MCDReforged/blob/master/doc/plugin_cn.md#server)
+MCDReforged的 `server` 对象, 推荐阅读MCDR的 [开发文档](https://github.com/Fallen-Breath/MCDReforged/blob/master/doc/plugin_cn.md#server)
 
 ### info
 
-解析后的消息内容, 阅读传递的`raw`属性有助于理解
+解析后的消息内容, 阅读传递的 `raw` 属性有助于理解
 
-你可以直接使用`info[path]`获取特定路径的内容
+你可以直接使用 `info[path]` 获取特定路径的内容
 
 它具有以下属性:
 
@@ -37,9 +37,10 @@ MCDReforged的`server`对象, 推荐阅读MCDR的[开发文档](https://github.c
 | --------------- | -------- | ---------------------------------------- |
 | raw             | dict     | 原始的dict                                |
 | time            | int      | 消息时间戳                                |
-| post_type       | str      | 类型, 如`message`, `notice`               |
+| post_type       | str      | 类型, 如 `message`, `notice`              |
 | source_type     | str      | 来源的类型                                |
 | source_id       | int      | 来源的QQ号                                |
+| server          | int      | 如果消息由QQBridge转发，则为服务器端口号，否则为 `None` |
 | user_id         | int      | 相关的用户id                              |
 |                 |          |                                          |
 | message_id      | int      | 消息的id, 可在撤回消息中使用               |
@@ -48,7 +49,7 @@ MCDReforged的`server`对象, 推荐阅读MCDR的[开发文档](https://github.c
 | content         | str      | 消息内容的纯字符串(优化过图片等)            |
 |                 |          |                                          |
 | notice_type     | str      | 事件的类型                                |
-| duration        | int      | `ban`的持续时长                           |
+| duration        | int      | `ban` 的持续时长                          |
 | operator_id     | int      | 操作者的QQ号                              |
 | notice_sub_type | str      | 事件子类型                                |
 | file_busid      | int      | 文件busid                                |
@@ -58,9 +59,9 @@ MCDReforged的`server`对象, 推荐阅读MCDR的[开发文档](https://github.c
 
 ### bot
 
-将酷Q的API进行封装, `bot.py`的Bot类
+将酷Q的API进行封装, `bot.py` 的Bot类
 
-推荐阅读酷Q官方的[API文档](https://cqhttp.cc/docs/4.15/#/API?id=api-%E5%88%97%E8%A1%A8)
+推荐阅读酷Q官方的 [API文档](https://cqhttp.cc/docs/4.15/#/API?id=api-%E5%88%97%E8%A1%A8)
 
 它具有以下方法, 每个方法都会返回requests的post结果对象:
 
@@ -96,8 +97,8 @@ MCDReforged的`server`对象, 推荐阅读MCDR的[开发文档](https://github.c
 
 ### get_bot()
 
-用于获取`bot`对象
+用于获取 `bot` 对象
 
 ### get_config()
 
-用于获取插件配置, 使用 `get_config()[key]` 来读取配置项
+用于获取插件配置, 使用 `get_config()[key]`  来读取配置项

@@ -33,6 +33,7 @@ class QQBridge:
     def send(self, data):
         for i in self.config['server_list']:
             target = f'http://{self.config["post_host"]}:{i}/post'
+            data['server'] = int(i)
             try:
                 requests.post(target, json=data)
                 self.logger.info('将数据转发到' + target)

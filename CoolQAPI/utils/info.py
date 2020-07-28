@@ -24,6 +24,7 @@ class Info:
         self.post_type = None
         self.source_type = None
         self.source_id = None
+        self.server = None
 
         # message
         self.message_id = None
@@ -53,6 +54,7 @@ class Info:
         self.post_type = None
         self.source_type = None
         self.source_id = None
+        self.server = None
 
         # message
         self.message_id = None
@@ -92,6 +94,8 @@ class Info:
         self.raw = self.__data
         self.time = self.__data['time']
         self.post_type = self.__data['post_type']
+        if 'server' in self.__data.keys():
+            self.server = self.__data['server']
 
         # 两种类型的上报
         if self.post_type == 'message':
