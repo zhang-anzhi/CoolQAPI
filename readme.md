@@ -6,7 +6,7 @@
 
 ## 环境要求
 
-1.**依赖的Python模块**
+### 依赖的Python模块
 
 - requests
 
