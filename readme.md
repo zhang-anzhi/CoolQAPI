@@ -1,6 +1,6 @@
 # CoolQAPI
 
-> [MCDReforged](https://github.com/Fallen-Breath/MCDReforged) 的酷Q开发API
+> [MCDReforged](https://github.com/Fallen-Breath/MCDReforged) 的QQ开发API
 >
 > 事件功能参考了 [MCDReforged](https://github.com/Fallen-Breath/MCDReforged) 的插件加载
 
@@ -8,21 +8,38 @@
 
 1.**依赖的Python模块**
 
+- requests
+
+- flask
+
+- PyYAML
+
 已存储在 `requirements.txt` 中, 可以使用 `pip install -r requirements.txt` 安装
 
 ## 使用
 
 前往 [release](https://github.com/zhang-anzhi/CoolQAPI/releases) 页面下载最新的release并解压
 
-### 配置酷Q
+### 配置mirai
 
-在解压到的文件夹中找到 `CoolQQ.zip`, 解压
+自行下载 [mirai-console](https://github.com/mamoe/mirai-console) 并按照安装 [cqhttp-mirai](https://github.com/yyuueexxiinngg/cqhttp-mirai) 插件
 
-解压后运行 `CQA.exe`, 登陆账号, 启用插件，看到酷Q http插件的日志页面即为成功
+运行一次mirai后关闭
 
-然后打开 `/data/app/io.github.richardchien.coolqhttpapi/config/` 将我写好的 `example.json` 替换为同一目录下的 `QQ号.json`
+打开 `\plugins\CQHTTPMirai\setting.yml` 写入以下内容
 
-重启酷Q http插件
+```yaml
+'QQ号':
+  cacheImage: false
+  http:
+    enable: true
+    host: 0.0.0.0
+    port: 5700
+    postUrl: "http://127.0.0.1:5701/post"
+    postMessageFormat: array
+```
+
+启动mirai
 
 ### 配置MCDR
 
@@ -44,25 +61,25 @@
 
 默认值: `127.0.0.1`
 
-接收酷Q转发消息的ip地址
+接收转发消息的ip地址
 
 2.**post_port**
 
 默认值: `5701`
 
-接收酷Q转发消息的端口
+接收转发消息的端口
 
 3.**api_host**
 
 默认值: `127.0.0.1`
 
-酷Qapi的ip地址
+api的ip地址
 
 4.**post_port**
 
 默认值: `5700`
 
-酷Qapi的端口
+api的端口
 
 5.**command_prefix**
 

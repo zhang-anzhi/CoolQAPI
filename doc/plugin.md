@@ -59,9 +59,7 @@ MCDReforged的 `server` 对象, 推荐阅读MCDR的 [开发文档](https://githu
 
 ### bot
 
-将酷Q的API进行封装, `bot.py` 的Bot类
-
-推荐阅读酷Q官方的 [API文档](https://cqhttp.cc/docs/4.15/#/API?id=api-%E5%88%97%E8%A1%A8)
+将API进行封装, `bot.py` 的Bot类
 
 它具有以下方法, 每个方法都会返回requests的post结果对象:
 
