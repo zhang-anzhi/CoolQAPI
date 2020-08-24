@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-cool_qq_api = None
+cool_q_api = None
 
 
 def on_qq_load(server, bot):
@@ -26,10 +26,10 @@ def on_qq_notice(server, info, bot):
 
 
 def on_load(server, old_module):
-    global cool_qq_api
-    cool_qq_api = server.get_plugin_instance('CoolQQAPI-MCDR')
+    global cool_q_api
+    cool_q_api = server.get_plugin_instance('CoolQAPI-MCDR')
 
 
 def on_info(server, info):
     if info.content.startswith('!!qq send '):
-        cool_qq_api.get_bot().send_msg(info.content[10:], group_id=1234567)
+        cool_q_api.get_bot().send_msg(info.content[10:], group_id=1234567)
