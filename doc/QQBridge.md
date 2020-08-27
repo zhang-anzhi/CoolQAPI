@@ -2,6 +2,15 @@
 
 运行 `QQBridge.py` 直接使用
 
+## 指令
+
+| 指令 | 功能 |
+| - | - |
+| stop | 关闭QQBridge |
+| help | 获取帮助 |
+| reload config | 重载配置文件 |
+| debug thread | 查看线程列表 |
+
 ## 配置
 
 `post_host`
