@@ -8,12 +8,6 @@
 
 ### 依赖的Python模块
 
-- requests
-
-- flask
-
-- PyYAML
-
 已存储在 `requirements.txt` 中, 可以使用 `pip install -r requirements.txt` 安装
 
 ## 使用
@@ -33,7 +27,7 @@
   cacheImage: false
   http:
     enable: true
-    host: 0.0.0.0
+    host: 127.0.0.1
     port: 5700
     postUrl: "http://127.0.0.1:5701/post"
     postMessageFormat: array
