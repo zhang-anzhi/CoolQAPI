@@ -78,12 +78,11 @@ class Info:
         self.file_size = None
 
     def parse(self, data):
-        """base parser"""
         # dict
         self.__data = data
-
-        self.__server.logger.debug(
-            json.dumps(self.__data, indent=4, ensure_ascii=False))
+        self.__server.logger.debug(f'接收上报数据' +
+                                   json.dumps(self.__data, indent=4,
+                                              ensure_ascii=False))
 
         # shutdown:
         if 'shutdown' in self.__data.keys() and self.__data['shutdown'] is True:
@@ -119,7 +118,8 @@ class Info:
         self.__event.call('on_qq_info', (self.__server, self, self.__bot))
         # call on_qq_command
         if self.content.startswith(self.config['command_prefix']):
-            self.__event.call('on_qq_command', (self.__server, self, self.__bot))
+            self.__event.call('on_qq_command',
+                              (self.__server, self, self.__bot))
 
     def notice_parse(self):
         self.notice_type = self.__data['notice_type']
