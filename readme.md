@@ -20,11 +20,10 @@
 
 运行一次mirai后关闭
 
-打开 `\plugins\CQHTTPMirai\setting.yml` 写入以下内容
+打开 `\plugins\CQHTTPMirai\setting.yml` 写入以下基本配置
 
 ```yaml
 'QQ号':
-  cacheImage: false
   http:
     enable: true
     host: 127.0.0.1
@@ -51,31 +50,31 @@
 
 配置文件位于 `CoolQAPI\config.yml`
 
-1.**post_host**
+`post_host`
 
 默认值: `127.0.0.1`
 
 接收转发消息的ip地址
 
-2.**post_port**
+`post_port`
 
 默认值: `5701`
 
 接收转发消息的端口
 
-3.**api_host**
+`api_host`
 
 默认值: `127.0.0.1`
 
 api的ip地址
 
-4.**post_port**
+`post_port`
 
 默认值: `5700`
 
 api的端口
 
-5.**command_prefix**
+`command_prefix`
 
 默认值: `/`
 
