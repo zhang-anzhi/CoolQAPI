@@ -8,7 +8,7 @@
 
 ### 依赖的Python模块
 
-已存储在 `requirements.txt` 中, 可以使用 `pip install -r requirements.txt` 安装
+已存储在 [requirements.txt](requirements.txt) 中, 可以使用 `pip install -r requirements.txt` 安装
 
 ## 使用
 
@@ -16,23 +16,11 @@
 
 ### 配置mirai
 
-自行下载 [mirai-console](https://github.com/mamoe/mirai-console) 并按照安装 [cqhttp-mirai](https://github.com/yyuueexxiinngg/cqhttp-mirai) 插件
+解压随release发布的 `mirai.zip`
 
-运行一次mirai后关闭
+将 `\plugins\CQHTTPMirai\setting.yml` 中的 `QQ号` 改为要使用的QQ号
 
-打开 `\plugins\CQHTTPMirai\setting.yml` 写入以下基本配置
-
-```yaml
-'QQ号':
-  http:
-    enable: true
-    host: 127.0.0.1
-    port: 5700
-    postUrl: "http://127.0.0.1:5701/post"
-    postMessageFormat: array
-```
-
-启动mirai
+启动mirai并登陆
 
 ### 配置MCDR
 
@@ -82,11 +70,11 @@ api的端口
 
 ## 指令
 
-| Command                | Function                                 |
-| ---------------------- | ---------------------------------------- |
-| !!CQ reload all        | 重载所有(接收服务器, 插件, 配置文件)        |
-| !!CQ reload plugin     | 重载插件                                  |
-| !!CQ update            | 检查并自动更新                            |
+| Command | Function |
+| -| -|
+| !!CQ reload all | 重载所有(接收服务器, 插件, 配置文件) |
+| !!CQ reload plugin | 重载插件 |
+| !!CQ update | 检查并自动更新 |
 
 ## 开发
 
